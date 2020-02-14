@@ -1,0 +1,59 @@
+{
+  "name": "crude-oil-contract",
+  "title": "Crude Oil Future Contract",
+  "version": "0.1",
+  "author": "Vara",
+  "description": "Crude Oil Future Contract 1",
+  "keywords": [
+    "crude Oil",
+    "cushing"
+  ],
+  "last_updated": "2020-01-15",
+  "licenses": [
+    {
+     "name": "ODC-PDDL-1.0",
+     "path": "http://opendatacommons.org/licenses/pddl/",
+     "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
+  "sources": [
+    {
+      "name": "United States Energy Information Administration",
+      "path": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RCLC1&f=A",
+      "title": "US Energy Information Administration"
+    }
+  ],
+  "resources": [
+    {
+      "name": "crude-oil-contract",
+      "path": "data/crude-oil-contract.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "year",
+            "description": "Year in YYYY Format"
+          },
+          {
+            "name": "Price",
+            "type": "number",
+            "description": "Dollars"
+          }
+        ]
+      }
+    }
+  ],
+  "views": [
+    {
+      "name": "crude-oil-contract",
+      "title": "crude-oil-contract",
+      "resources": ["crude-oil-contract"],
+      "specType": "simple",
+      "spec": {
+        "type": "line",
+        "group": "Year",
+        "series": ["Price"]
+      }
+    }
+  ]
+}
